@@ -1,0 +1,143 @@
+---
+title: "Intro to R Bootcamp 2026: Start Here"
+author: "UM Biostatistics"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Goal
+
+By the end of this project, you will have a small reproducible analysis that imports data, checks it, cleans it, summarizes it, plots it, and fits a simple model.
+
+This dataset is simulated for teaching. It does not contain real people.
+
+## 1. Setup
+
+```{r}
+# Run scripts/00_setup.R first if tidyverse or broom is not installed.
+library(tidyverse)
+library(broom)
+```
+
+AI checkpoint: Ask an AI assistant to explain what `library(tidyverse)` does. Then verify by running `search()` or `?library` in R.
+
+## 2. Import
+
+```{r}
+health_raw <- read_csv("data/bootcamp_health.csv")
+```
+
+```{r}
+glimpse(health_raw)
+```
+
+## 3. Inspect
+
+Use small checks before changing the data.
+
+```{r}
+# How many rows and columns?
+
+# What are the first few rows?
+
+# How many missing values are in each column?
+
+```
+
+## 4. Clean and create variables
+
+Create a cleaned dataset called `health_clean`.
+
+```{r}
+health_clean <- health_raw |>
+  mutate(
+    visit_date = as.Date(visit_date),
+    hypertension_flag = systolic_bp >= 130 | diastolic_bp >= 80,
+    bmi_group = case_when(
+      is.na(bmi) ~ NA_character_,
+      bmi < 18.5 ~ "Underweight",
+      bmi < 25 ~ "Healthy range",
+      bmi < 30 ~ "Overweight",
+      TRUE ~ "Obesity range"
+    )
+  ) |>
+  filter(!is.na(age), !is.na(bmi), !is.na(systolic_bp))
+```
+
+AI checkpoint: Ask AI to explain one line of the `case_when()` code. Do not ask it to do the whole lab.
+
+## 5. Summarize
+
+```{r}
+health_clean |>
+  group_by(sex) |>
+  summarize(
+    n = n(),
+    mean_age = mean(age),
+    mean_bmi = mean(bmi),
+    percent_hypertension = mean(hypertension_flag) * 100,
+    .groups = "drop"
+  )
+```
+
+## 6. Plot
+
+Build the plot one layer at a time.
+
+```{r}
+health_clean |>
+  ggplot(aes(x = bmi, y = systolic_bp)) +
+  geom_point()
+```
+
+Now add color, a trend line, labels, and a theme.
+
+```{r}
+# Your improved plot here
+```
+
+## 7. Simple model
+
+The goal is to learn syntax and output-reading, not regression theory.
+
+```{r}
+fit <- lm(systolic_bp ~ age + bmi + sex, data = health_clean)
+summary(fit)
+```
+
+```{r}
+tidy(fit)
+```
+
+AI checkpoint: Ask AI to explain the output in beginner language. Then verify the variable names and sample size yourself.
+
+## 8. Save one output
+
+```{r}
+cohort_table <- health_clean |>
+  group_by(sex) |>
+  summarize(
+    n = n(),
+    mean_bmi = mean(bmi),
+    mean_sbp = mean(systolic_bp),
+    .groups = "drop"
+  )
+
+write_csv(cohort_table, "output/cohort_table.csv")
+```
+
+## Exit check
+
+Write one sentence answering each question:
+
+1. What file did you import?
+2. What did you check before cleaning?
+3. What did `mutate()` create?
+4. What did `group_by()` change about the summary?
+5. What would you ask AI to explain, and how would you verify the answer?

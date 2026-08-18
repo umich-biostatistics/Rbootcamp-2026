@@ -1,0 +1,261 @@
+participant_id,visit_date,cohort,age,sex,race_ethnicity,bmi,systolic_bp,diastolic_bp,total_cholesterol,smoking_status,diabetes,physical_activity_min_week,sleep_hours
+B1000,2026-08-05,screening,34,Female,Multiracial / another race,24.7,123.0,69,168,Never,No,237.0,5.0
+B1001,2026-07-13,screening,26,Female,Asian,23.2,122.0,70,180,Never,No,29.0,9.7
+B1002,2026-07-05,follow_up,49,Female,Black or African American,26.2,130.0,64,209,Never,No,61.0,8.5
+B1003,2026-08-09,screening,33,Male,Black or African American,17.5,112.0,72,154,Never,No,146.0,8.7
+B1004,2026-08-10,screening,52,Female,Asian,25.8,120.0,67,203,Former,No,,8.1
+B1005,2026-08-05,screening,18,Male,Hispanic or Latino,35.7,119.0,76,168,Never,No,119.0,8.1
+B1006,2026-07-19,screening,43,Female,Hispanic or Latino,25.7,,52,163,,Yes,147.0,5.7
+B1007,2026-07-20,screening,50,Male,Asian,18.5,113.0,59,156,Never,No,23.0,7.9
+B1008,2026-07-30,screening,47,Female,Asian,30.3,128.0,79,257,,No,154.0,6.6
+B1009,2026-08-11,screening,61,Female,Hispanic or Latino,24.6,127.0,71,169,Former,No,27.0,9.1
+B1010,2026-07-20,screening,18,Male,Hispanic or Latino,24.2,118.0,66,150,Former,No,77.0,6.8
+B1011,2026-08-11,screening,35,Female,Black or African American,21.7,112.0,70,177,Never,No,80.0,6.8
+B1012,2026-07-07,follow_up,58,Female,Multiracial / another race,36.1,140.0,77,275,Never,No,138.0,8.3
+B1013,2026-07-23,follow_up,47,Male,Asian,30.6,127.0,75,177,Never,No,135.0,5.4
+B1014,2026-08-11,screening,30,Female,Black or African American,28.2,,66,167,Never,No,231.0,8.8
+B1015,2026-07-24,follow_up,43,Female,Asian,27.7,117.0,64,195,,No,69.0,
+B1016,2026-07-14,screening,38,Male,Multiracial / another race,29.4,128.0,64,176,Never,No,105.0,6.5
+B1017,2026-07-29,follow_up,44,Female,White,30.3,125.0,73,150,Current,No,19.0,9.4
+B1018,2026-08-04,follow_up,35,Female,White,32.0,125.0,58,173,Never,No,38.0,8.4
+B1019,2026-07-29,screening,41,Male,White,22.6,101.0,56,139,,No,170.0,7.2
+B1020,2026-07-28,screening,39,Female,Asian,18.8,127.0,69,159,Never,No,126.0,8.3
+B1021,2026-07-15,screening,32,Female,White,30.5,133.0,67,200,Never,Yes,,7.9
+B1022,2026-07-10,follow_up,34,Female,Black or African American,39.7,134.0,72,220,Current,No,149.0,7.1
+B1023,2026-07-05,screening,18,Female,White,31.7,122.0,66,227,Never,Yes,176.0,5.3
+B1024,2026-08-02,screening,23,Female,Black or African American,27.2,97.0,68,162,Never,No,86.0,7.7
+B1025,2026-07-15,follow_up,25,Female,White,21.8,111.0,67,193,Never,No,26.0,8.0
+B1026,2026-08-05,screening,78,Female,Multiracial / another race,,176.0,74,220,Never,Yes,36.0,8.1
+B1027,2026-07-21,screening,31,Female,White,29.7,112.0,67,208,Never,No,111.0,7.5
+B1028,2026-07-13,follow_up,33,Male,White,31.2,133.0,67,173,Never,No,57.0,6.6
+B1029,2026-07-31,follow_up,26,Female,White,23.4,90.0,60,159,Never,No,170.0,6.9
+B1030,2026-07-30,screening,18,Male,White,22.9,92.0,56,179,Never,No,134.0,7.0
+B1031,2026-07-31,screening,28,Female,Hispanic or Latino,24.8,120.0,66,180,Never,No,22.0,7.7
+B1032,2026-08-05,screening,40,Female,Black or African American,29.2,115.0,81,157,Never,No,77.0,7.0
+B1033,2026-07-02,screening,50,Male,Black or African American,19.5,133.0,68,200,Never,No,195.0,7.4
+B1034,2026-07-22,screening,26,Female,Hispanic or Latino,32.3,115.0,69,151,Never,No,77.0,8.2
+B1035,2026-08-10,screening,78,Male,Asian,20.4,133.0,70,254,Current,Yes,194.0,7.3
+B1036,2026-08-05,screening,43,Female,White,27.3,124.0,71,234,Never,No,168.0,6.6
+B1037,2026-07-13,screening,28,Male,Asian,24.7,121.0,62,176,Never,No,159.0,5.2
+B1038,2026-07-11,follow_up,27,Female,White,24.8,107.0,73,132,Former,No,94.0,7.4
+B1039,2026-07-22,screening,25,Male,Asian,31.8,114.0,64,188,Never,No,151.0,8.6
+B1040,2026-07-04,screening,35,Male,White,17.5,98.0,60,148,Never,No,,6.4
+B1041,2026-08-06,follow_up,18,Female,White,24.9,108.0,68,119,Never,No,48.0,7.4
+B1042,2026-08-01,screening,35,Male,White,34.1,123.0,83,203,Former,Yes,125.0,7.0
+B1043,2026-07-30,follow_up,36,Female,Black or African American,33.4,116.0,71,163,Never,No,71.0,7.8
+B1044,2026-08-02,follow_up,26,Male,Hispanic or Latino,,106.0,69,160,Never,No,158.0,8.1
+B1045,2026-07-20,follow_up,56,Female,White,29.0,144.0,71,289,Current,Yes,48.0,8.3
+B1046,2026-07-26,screening,28,Male,White,29.7,121.0,74,225,Never,No,72.0,
+B1047,2026-07-13,screening,49,Male,Hispanic or Latino,23.8,138.0,74,228,Never,Yes,58.0,9.0
+B1048,2026-07-06,follow_up,54,Female,White,31.8,136.0,76,173,Current,No,62.0,7.3
+B1049,2026-08-03,screening,22,Male,White,,109.0,63,166,Never,No,346.0,7.1
+B1050,2026-07-23,screening,18,Male,Multiracial / another race,40.8,124.0,67,225,Current,No,84.0,6.6
+B1051,2026-07-08,follow_up,57,Male,Black or African American,22.0,132.0,67,179,Never,No,105.0,6.3
+B1052,2026-07-31,follow_up,63,Male,Asian,27.8,144.0,74,237,Never,No,48.0,5.4
+B1053,2026-07-18,screening,33,Male,White,23.9,108.0,67,162,Never,No,64.0,9.1
+B1054,2026-08-05,screening,33,Female,Hispanic or Latino,29.9,132.0,62,193,Never,Yes,65.0,7.7
+B1055,2026-07-05,follow_up,18,Female,White,32.4,111.0,63,161,Never,No,,8.3
+B1056,2026-08-06,screening,18,Female,White,24.7,109.0,71,162,Never,No,44.0,8.1
+B1057,2026-08-07,follow_up,44,Female,Asian,24.2,111.0,68,156,Never,No,177.0,7.3
+B1058,2026-07-06,screening,47,Male,White,22.6,131.0,56,159,Never,No,7.0,6.1
+B1059,2026-07-26,screening,26,Female,White,,121.0,63,136,Never,No,212.0,7.1
+B1060,2026-08-03,screening,18,Female,Hispanic or Latino,26.2,124.0,61,190,Current,No,,7.8
+B1061,2026-07-03,screening,39,Female,Black or African American,20.9,115.0,58,166,Never,No,71.0,6.4
+B1062,2026-08-04,follow_up,34,Male,Black or African American,19.0,128.0,60,151,Never,Yes,84.0,5.8
+B1063,2026-08-10,follow_up,37,Male,White,28.5,129.0,65,240,Never,No,48.0,7.3
+B1064,2026-07-08,screening,70,Male,White,25.8,135.0,75,245,Former,No,47.0,7.1
+B1065,2026-08-01,screening,56,Male,White,21.5,121.0,72,201,Current,Yes,154.0,
+B1066,2026-07-11,follow_up,52,Female,Asian,33.0,132.0,79,210,Never,No,13.0,7.1
+B1067,2026-07-03,screening,49,Female,White,29.2,133.0,65,243,Current,Yes,198.0,7.4
+B1068,2026-07-08,screening,25,Female,White,38.7,132.0,66,200,Never,No,28.0,6.6
+B1069,2026-07-26,screening,44,Female,Hispanic or Latino,,132.0,77,150,Never,Yes,136.0,8.3
+B1070,2026-07-19,follow_up,36,Female,Black or African American,33.7,129.0,64,165,Never,No,70.0,6.1
+B1071,2026-08-07,follow_up,46,Female,White,29.7,113.0,68,168,Current,No,17.0,8.9
+B1072,2026-08-06,follow_up,49,Male,White,33.1,138.0,75,167,Never,No,77.0,5.8
+B1073,2026-07-18,screening,45,Male,Asian,21.9,120.0,79,185,Current,No,63.0,7.0
+B1074,2026-08-05,screening,23,Female,Black or African American,30.4,122.0,66,174,Never,No,118.0,8.0
+B1075,2026-08-06,screening,30,Female,Asian,27.4,112.0,68,204,Never,No,108.0,
+B1076,2026-07-27,follow_up,22,Female,Black or African American,27.6,103.0,59,133,Former,No,135.0,6.4
+B1077,2026-07-06,screening,54,Male,White,23.8,131.0,82,239,Never,No,257.0,6.6
+B1078,2026-07-29,screening,36,Male,White,26.6,124.0,71,158,Never,Yes,29.0,8.2
+B1079,2026-07-29,screening,35,Male,Black or African American,28.3,124.0,68,182,Never,No,104.0,5.4
+B1080,2026-07-27,screening,46,Male,Multiracial / another race,,125.0,54,201,Never,No,116.0,7.2
+B1081,2026-07-14,screening,35,Female,Asian,27.8,116.0,65,219,Former,No,198.0,6.7
+B1082,2026-07-24,screening,36,Female,Black or African American,27.6,109.0,60,176,Current,No,140.0,6.1
+B1083,2026-07-16,follow_up,65,Male,Black or African American,30.2,124.0,63,214,Current,No,62.0,6.7
+B1084,2026-07-30,screening,31,Male,White,32.8,136.0,67,189,Never,No,77.0,8.0
+B1085,2026-07-15,screening,34,Female,White,25.2,,68,214,Never,No,28.0,7.0
+B1086,2026-08-10,screening,21,Female,Black or African American,26.8,100.0,57,165,Never,No,129.0,7.3
+B1087,2026-08-05,screening,35,Female,White,30.6,126.0,73,199,Former,No,70.0,8.8
+B1088,2026-07-20,screening,39,Female,White,30.5,,75,186,Never,No,80.0,7.4
+B1089,2026-07-31,screening,39,Female,Hispanic or Latino,30.1,110.0,74,175,Former,No,307.0,5.5
+B1090,2026-07-23,follow_up,48,Female,Black or African American,28.6,134.0,67,175,Never,No,140.0,6.5
+B1091,2026-07-19,screening,31,Female,White,21.7,108.0,64,178,Never,No,93.0,7.8
+B1092,2026-07-24,follow_up,28,Female,Multiracial / another race,23.1,105.0,43,133,Current,No,228.0,6.5
+B1093,2026-08-03,screening,38,Male,Black or African American,25.2,107.0,66,188,Never,No,71.0,8.2
+B1094,2026-07-12,follow_up,54,Male,White,36.9,144.0,84,248,Never,Yes,5.0,7.9
+B1095,2026-07-22,screening,67,Female,Black or African American,17.5,116.0,79,178,Never,No,244.0,5.3
+B1096,2026-07-10,screening,31,Male,Black or African American,17.5,95.0,46,166,Never,No,103.0,7.9
+B1097,2026-08-04,screening,45,Female,Asian,27.5,127.0,78,185,Never,No,262.0,8.0
+B1098,2026-07-04,follow_up,30,Male,Hispanic or Latino,22.9,122.0,54,189,Never,No,234.0,8.0
+B1099,2026-07-05,screening,55,Male,Black or African American,17.5,118.0,65,194,Never,No,188.0,6.8
+B1100,2026-07-23,follow_up,34,Male,White,24.4,120.0,65,143,Never,No,155.0,6.6
+B1101,2026-07-03,screening,37,Male,White,,127.0,67,160,Never,No,51.0,9.0
+B1102,2026-08-06,screening,51,Female,Hispanic or Latino,20.6,117.0,68,143,Former,No,50.0,
+B1103,2026-07-09,follow_up,42,Female,Asian,32.7,134.0,61,207,Current,No,63.0,8.0
+B1104,2026-07-23,screening,27,Female,Black or African American,25.1,106.0,68,218,Never,No,,8.8
+B1105,2026-08-05,screening,40,Female,White,19.5,131.0,55,185,Never,No,140.0,9.7
+B1106,2026-07-09,screening,58,Female,Black or African American,21.1,132.0,79,227,Former,No,180.0,7.8
+B1107,2026-07-16,follow_up,31,Female,White,27.1,122.0,66,219,Current,No,64.0,8.9
+B1108,2026-07-29,follow_up,47,Female,White,34.9,146.0,80,191,Never,No,46.0,9.0
+B1109,2026-07-05,screening,35,Female,White,24.4,,70,176,Former,No,69.0,
+B1110,2026-07-25,follow_up,37,Female,Black or African American,33.1,125.0,70,225,Former,No,105.0,7.0
+B1111,2026-07-13,follow_up,64,Male,White,31.6,134.0,69,241,Former,No,90.0,
+B1112,2026-08-04,screening,30,Female,White,29.6,97.0,62,207,Never,No,300.0,6.7
+B1113,2026-07-30,screening,28,Male,White,23.1,100.0,65,199,Never,No,145.0,7.9
+B1114,2026-07-08,follow_up,56,Female,White,21.4,129.0,67,184,Current,No,0.0,7.6
+B1115,2026-07-10,screening,47,Male,Asian,30.7,124.0,68,204,Never,No,110.0,8.5
+B1116,2026-07-21,follow_up,40,Female,White,,115.0,71,208,Never,No,62.0,6.5
+B1117,2026-07-27,screening,51,Male,Black or African American,17.5,118.0,62,216,Never,No,208.0,8.3
+B1118,2026-08-04,screening,46,Male,Asian,31.1,138.0,64,221,Never,No,152.0,6.2
+B1119,2026-07-10,screening,35,Female,Hispanic or Latino,20.5,127.0,65,167,Former,No,88.0,6.3
+B1120,2026-07-25,follow_up,34,Male,Black or African American,24.0,109.0,69,198,Current,No,179.0,5.7
+B1121,2026-07-23,follow_up,45,Male,Black or African American,30.0,,63,180,Former,No,169.0,6.7
+B1122,2026-07-12,screening,52,Male,Multiracial / another race,32.8,134.0,72,224,Former,No,179.0,8.6
+B1123,2026-08-06,screening,40,Female,White,,128.0,64,159,Never,No,116.0,5.1
+B1124,2026-07-25,screening,23,Female,Asian,26.3,91.0,64,192,Former,No,132.0,8.2
+B1125,2026-07-18,follow_up,66,Male,Black or African American,31.5,158.0,93,225,Current,No,52.0,4.6
+B1126,2026-07-23,follow_up,39,Female,Black or African American,21.3,124.0,59,192,Never,No,58.0,8.5
+B1127,2026-07-25,screening,51,Male,White,28.0,144.0,71,244,Never,Yes,153.0,8.2
+B1128,2026-08-01,screening,29,Male,Hispanic or Latino,20.4,112.0,58,197,Current,No,62.0,7.7
+B1129,2026-07-05,screening,27,Female,White,30.0,116.0,56,210,Never,No,117.0,7.3
+B1130,2026-08-08,follow_up,52,Male,White,,144.0,79,193,Former,No,1.0,8.6
+B1131,2026-08-04,follow_up,48,Female,Hispanic or Latino,29.7,115.0,77,177,Never,No,151.0,8.9
+B1132,2026-07-22,screening,21,Male,White,30.3,115.0,54,166,Never,No,152.0,8.1
+B1133,2026-07-06,follow_up,36,Female,Hispanic or Latino,24.3,110.0,61,110,Never,No,,7.6
+B1134,2026-08-06,screening,51,Male,Hispanic or Latino,36.0,123.0,67,207,Never,No,123.0,7.6
+B1135,2026-07-21,screening,28,Female,Black or African American,29.5,124.0,63,153,Former,No,101.0,7.1
+B1136,2026-07-23,follow_up,63,Female,White,27.2,135.0,77,226,Current,No,,6.1
+B1137,2026-08-05,screening,27,Male,Hispanic or Latino,23.9,115.0,53,167,Never,No,180.0,4.8
+B1138,2026-07-02,screening,21,Female,Multiracial / another race,30.8,116.0,65,183,Never,No,73.0,6.6
+B1139,2026-07-27,screening,47,Female,Black or African American,23.0,113.0,67,186,Never,No,196.0,6.3
+B1140,2026-07-10,follow_up,33,Female,White,24.9,114.0,57,177,Current,No,,6.4
+B1141,2026-07-21,follow_up,50,Female,White,38.1,142.0,76,226,Never,Yes,44.0,6.7
+B1142,2026-08-11,follow_up,35,Male,White,26.3,113.0,63,187,Current,No,326.0,6.2
+B1143,2026-08-11,screening,58,Male,Black or African American,25.0,134.0,68,260,,No,143.0,6.8
+B1144,2026-07-21,screening,35,Male,White,19.5,106.0,70,154,Current,No,73.0,
+B1145,2026-07-30,follow_up,36,Female,Black or African American,,116.0,71,173,Never,No,420.0,6.1
+B1146,2026-07-22,screening,18,Male,Hispanic or Latino,28.9,106.0,70,154,Former,No,275.0,
+B1147,2026-07-09,screening,35,Male,Black or African American,17.5,112.0,58,119,Former,No,,
+B1148,2026-07-31,follow_up,32,Male,White,25.9,119.0,58,148,Never,No,108.0,7.1
+B1149,2026-07-11,follow_up,33,Female,White,33.0,120.0,62,209,Never,No,172.0,7.0
+B1150,2026-07-24,screening,40,Male,White,33.1,135.0,67,197,Current,No,42.0,8.6
+B1151,2026-07-22,follow_up,42,Female,Black or African American,23.2,141.0,66,176,Never,No,110.0,6.9
+B1152,2026-07-25,screening,29,Female,Black or African American,37.5,131.0,74,230,Never,No,51.0,7.9
+B1153,2026-07-01,screening,27,Female,White,32.5,116.0,73,141,Never,No,24.0,
+B1154,2026-07-10,screening,45,Female,Asian,25.2,126.0,84,184,Former,Yes,3.0,7.1
+B1155,2026-07-25,follow_up,30,Female,Asian,21.8,97.0,65,179,Never,No,248.0,6.2
+B1156,2026-08-10,screening,26,Female,White,27.6,122.0,57,174,Never,No,56.0,4.8
+B1157,2026-07-20,follow_up,39,Male,White,23.1,132.0,61,223,Never,No,35.0,5.8
+B1158,2026-07-10,follow_up,52,Male,White,20.8,131.0,75,231,Never,No,,7.7
+B1159,2026-07-15,screening,40,Female,White,37.0,121.0,66,254,Never,No,95.0,8.9
+B1160,2026-07-23,follow_up,64,Female,Hispanic or Latino,22.1,122.0,59,194,Never,No,364.0,7.1
+B1161,2026-07-09,follow_up,37,Female,White,22.4,127.0,59,161,Former,No,57.0,8.2
+B1162,2026-07-15,screening,44,Male,White,22.9,140.0,71,205,Former,No,64.0,6.1
+B1163,2026-08-03,screening,62,Female,Black or African American,38.4,150.0,83,254,Current,Yes,168.0,7.5
+B1164,2026-07-07,follow_up,33,Male,Black or African American,19.6,105.0,59,128,Never,No,117.0,7.3
+B1165,2026-07-13,screening,24,Male,White,23.0,95.0,67,142,Former,No,105.0,6.5
+B1166,2026-07-12,screening,18,Male,Multiracial / another race,20.3,104.0,57,168,Never,No,140.0,7.4
+B1167,2026-08-07,screening,46,Female,Black or African American,24.7,135.0,62,252,Never,No,127.0,7.4
+B1168,2026-08-05,follow_up,19,Male,White,26.7,107.0,55,152,Former,No,185.0,8.3
+B1169,2026-07-16,follow_up,36,Female,Black or African American,31.6,114.0,67,199,Never,No,127.0,7.4
+B1170,2026-08-09,screening,42,Female,White,31.4,127.0,62,164,Never,No,18.0,7.0
+B1171,2026-08-03,screening,48,Male,Hispanic or Latino,30.0,131.0,68,242,Never,No,4.0,7.3
+B1172,2026-07-11,follow_up,49,Male,Asian,20.9,110.0,75,173,Never,No,216.0,5.3
+B1173,2026-07-08,screening,34,Female,Hispanic or Latino,23.2,133.0,70,163,Never,No,120.0,6.2
+B1174,2026-08-11,screening,58,Female,White,30.2,119.0,66,197,Former,No,227.0,5.5
+B1175,2026-07-25,screening,34,Female,Black or African American,27.8,125.0,72,153,Current,No,75.0,7.5
+B1176,2026-07-09,follow_up,46,Female,Asian,17.5,113.0,55,109,Former,No,27.0,7.9
+B1177,2026-07-12,screening,24,Male,White,27.0,113.0,62,123,Former,No,83.0,9.0
+B1178,2026-07-15,follow_up,23,Female,Black or African American,26.2,114.0,67,140,Never,Yes,101.0,7.7
+B1179,2026-08-08,screening,29,Female,Asian,22.6,118.0,62,159,Never,No,382.0,5.8
+B1180,2026-08-07,follow_up,49,Female,White,30.1,,71,195,Former,No,231.0,2.5
+B1181,2026-07-09,screening,44,Male,White,26.7,115.0,65,202,Former,No,73.0,8.0
+B1182,2026-08-01,screening,27,Female,Asian,33.0,114.0,67,213,Never,No,305.0,4.5
+B1183,2026-08-09,screening,42,Male,White,26.8,133.0,77,123,Former,No,75.0,8.9
+B1184,2026-07-08,screening,46,Male,Asian,35.1,126.0,70,244,Former,No,22.0,7.2
+B1185,2026-07-10,screening,31,Female,White,17.5,111.0,59,186,Never,No,173.0,7.0
+B1186,2026-07-24,screening,25,Male,Black or African American,24.7,114.0,52,175,,No,111.0,7.1
+B1187,2026-07-31,screening,38,Male,Asian,35.3,137.0,70,224,Never,No,123.0,8.7
+B1188,2026-07-01,screening,47,Male,White,28.1,120.0,59,225,Never,No,26.0,6.6
+B1189,2026-07-28,follow_up,49,Female,Multiracial / another race,37.9,137.0,73,284,Former,Yes,44.0,8.6
+B1190,2026-07-31,screening,33,Female,Black or African American,29.3,97.0,66,144,Former,No,36.0,8.3
+B1191,2026-07-03,screening,51,Male,White,34.7,,67,198,Former,No,107.0,6.8
+B1192,2026-07-21,follow_up,56,Female,Black or African American,20.4,126.0,68,236,Current,No,92.0,7.7
+B1193,2026-07-08,screening,18,Female,White,,119.0,66,155,Never,No,98.0,8.2
+B1194,2026-08-11,follow_up,39,Male,White,30.5,111.0,74,208,Never,No,239.0,7.3
+B1195,2026-07-14,screening,32,Male,Black or African American,23.6,112.0,55,167,Never,No,97.0,9.9
+B1196,2026-07-24,follow_up,41,Female,Hispanic or Latino,32.9,,61,152,Former,No,84.0,8.5
+B1197,2026-07-10,follow_up,35,Male,White,29.7,112.0,71,169,Former,No,107.0,8.0
+B1198,2026-08-08,follow_up,19,Male,Black or African American,20.0,106.0,54,167,Never,No,106.0,6.8
+B1199,2026-07-05,follow_up,44,Female,Hispanic or Latino,21.6,108.0,67,196,Never,No,182.0,7.1
+B1200,2026-08-11,follow_up,50,Female,Black or African American,,135.0,73,212,Never,No,420.0,7.0
+B1201,2026-07-27,screening,43,Male,White,21.8,116.0,71,150,Never,No,210.0,6.4
+B1202,2026-07-17,screening,29,Female,Hispanic or Latino,18.6,107.0,72,164,Never,No,183.0,5.7
+B1203,2026-08-09,screening,29,Female,White,24.3,114.0,64,162,Never,No,164.0,6.8
+B1204,2026-08-07,screening,59,Female,Black or African American,,134.0,73,172,Former,No,159.0,6.4
+B1205,2026-07-04,screening,44,Male,White,33.2,127.0,63,178,Never,Yes,,8.6
+B1206,2026-07-21,follow_up,37,Female,White,27.8,105.0,59,186,Former,No,277.0,5.2
+B1207,2026-07-04,screening,37,Male,White,26.8,115.0,68,169,Never,No,174.0,7.3
+B1208,2026-07-02,screening,44,Male,White,28.0,115.0,79,165,Never,No,220.0,7.0
+B1209,2026-07-02,screening,37,Male,White,17.5,116.0,64,171,Never,No,69.0,6.8
+B1210,2026-08-03,screening,28,Female,Hispanic or Latino,27.3,104.0,72,129,Never,No,48.0,8.8
+B1211,2026-08-08,follow_up,37,Male,White,33.3,139.0,71,191,Current,No,106.0,5.9
+B1212,2026-07-15,screening,42,Male,Multiracial / another race,26.3,141.0,67,190,Never,No,143.0,8.5
+B1213,2026-07-16,follow_up,35,Female,White,30.7,136.0,81,184,Current,Yes,125.0,7.2
+B1214,2026-07-28,screening,38,Female,White,26.4,126.0,72,192,Never,No,71.0,8.3
+B1215,2026-07-03,follow_up,37,Male,Hispanic or Latino,24.3,114.0,56,211,Former,No,92.0,6.0
+B1216,2026-07-22,screening,26,Female,Multiracial / another race,26.4,96.0,52,214,Never,No,91.0,6.0
+B1217,2026-07-13,screening,30,Male,Hispanic or Latino,28.6,129.0,66,104,Never,No,,8.4
+B1218,2026-07-02,follow_up,60,Female,White,26.5,143.0,64,167,Never,No,128.0,
+B1219,2026-08-03,screening,36,Female,White,28.0,119.0,54,158,Never,No,50.0,6.6
+B1220,2026-07-15,screening,44,Female,Asian,32.7,137.0,65,195,Former,No,,9.8
+B1221,2026-07-07,follow_up,18,Male,White,,102.0,60,156,Current,No,196.0,6.4
+B1222,2026-07-01,screening,55,Male,Black or African American,36.7,139.0,74,164,Never,No,115.0,6.8
+B1223,2026-07-05,follow_up,59,Female,Hispanic or Latino,25.3,125.0,80,187,Never,No,91.0,6.6
+B1224,2026-07-22,screening,18,Female,White,21.9,99.0,71,146,Current,No,124.0,9.1
+B1225,2026-07-26,screening,51,Female,Hispanic or Latino,19.0,125.0,60,176,Never,No,34.0,6.9
+B1226,2026-08-11,screening,29,Male,Hispanic or Latino,37.7,129.0,70,222,Never,No,208.0,8.3
+B1227,2026-07-01,screening,28,Female,Black or African American,17.5,111.0,61,180,Former,No,72.0,8.8
+B1228,2026-08-10,follow_up,33,Female,Black or African American,30.6,116.0,55,180,Never,No,60.0,7.9
+B1229,2026-07-21,follow_up,18,Female,Hispanic or Latino,27.9,117.0,61,170,Never,No,117.0,
+B1230,2026-07-08,follow_up,18,Male,White,22.8,110.0,68,143,Former,No,210.0,7.6
+B1231,2026-07-01,follow_up,21,Female,Black or African American,28.5,114.0,77,200,Former,No,85.0,6.6
+B1232,2026-08-09,screening,40,Female,Black or African American,36.0,124.0,74,214,Never,No,361.0,7.6
+B1233,2026-07-25,follow_up,30,Female,White,28.4,,67,184,Never,No,43.0,
+B1234,2026-08-04,screening,53,Female,Multiracial / another race,29.6,,72,266,Never,No,133.0,7.4
+B1235,2026-07-02,screening,18,Female,Asian,18.0,111.0,56,123,,No,167.0,8.2
+B1236,2026-07-18,screening,45,Female,Asian,23.3,124.0,69,195,Never,No,116.0,8.4
+B1237,2026-07-16,screening,56,Female,Multiracial / another race,23.2,127.0,70,245,Former,No,28.0,9.6
+B1238,2026-08-09,screening,54,Male,Black or African American,27.1,,76,142,Never,No,45.0,7.6
+B1239,2026-07-23,screening,45,Female,White,32.3,140.0,75,227,Never,Yes,90.0,10.2
+B1240,2026-07-22,screening,31,Male,White,18.2,115.0,60,102,Never,No,203.0,5.5
+B1241,2026-08-01,screening,32,Female,Asian,24.1,99.0,63,191,Never,No,254.0,5.4
+B1242,2026-07-11,screening,40,Female,Hispanic or Latino,,113.0,60,187,Never,No,157.0,13.2
+B1243,2026-07-09,screening,32,Female,White,26.8,119.0,59,209,Current,No,236.0,4.1
+B1244,2026-08-11,screening,38,Female,White,40.0,119.0,73,228,Former,No,189.0,7.3
+B1245,2026-07-15,follow_up,55,Female,Multiracial / another race,31.6,115.0,73,153,Never,No,128.0,8.1
+B1246,2026-07-05,screening,49,Male,White,33.1,136.0,74,213,Never,No,87.0,7.4
+B1247,2026-07-23,follow_up,38,Female,Asian,,122.0,74,194,Current,No,17.0,8.1
+B1248,2026-07-03,screening,38,Male,Asian,28.2,121.0,75,224,Former,No,32.0,8.6
+B1249,2026-07-09,screening,36,Male,Hispanic or Latino,25.5,117.0,64,157,Never,No,37.0,8.0
+B1250,2026-07-31,follow_up,54,Male,Asian,20.0,118.0,70,187,Never,Yes,49.0,8.9
+B1251,2026-07-30,screening,45,Male,Black or African American,27.2,131.0,68,198,Never,No,234.0,7.6
+B1252,2026-07-24,screening,29,Male,Hispanic or Latino,33.8,110.0,67,194,Never,No,116.0,8.1
+B1253,2026-07-15,follow_up,49,Female,White,,132.0,64,187,Former,No,,6.7
+B1254,2026-07-22,follow_up,76,Female,Black or African American,21.6,148.0,73,207,Never,No,51.0,5.8
+B1255,2026-08-06,screening,56,Male,White,28.7,137.0,75,196,Never,No,51.0,7.3
+B1256,2026-08-07,screening,40,Female,White,22.0,116.0,73,156,Never,No,60.0,7.7
+B1257,2026-07-15,screening,29,Male,White,26.8,120.0,60,153,Never,No,44.0,8.1
+B1258,2026-07-21,screening,18,Male,White,22.4,91.0,53,152,Former,No,123.0,6.4
+B1259,2026-07-27,screening,37,Male,White,21.5,100.0,61,197,Never,No,257.0,7.5

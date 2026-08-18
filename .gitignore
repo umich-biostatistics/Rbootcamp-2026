@@ -1,0 +1,8 @@
+.Rhistory
+.RData
+.Rproj.user/
+.DS_Store
+output/*.html
+output/*.pdf
+output/*.docx
+*.log
