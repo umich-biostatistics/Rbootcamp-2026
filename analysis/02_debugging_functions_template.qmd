@@ -1,0 +1,489 @@
+---
+title: "Day 2 Workshop: Debugging and Reusable Code"
+author: "UM Biostatistics"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+execute:
+  echo: true
+  warning: false
+  message: false
+  error: true
+---
+
+## Goal for this lab
+
+Today is about getting unstuck without starting over.
+
+By the end, you should be able to:
+
+1. Use a repeatable debugging workflow.
+2. Translate common R errors into object checks.
+3. Turn repeated analysis code into a small function.
+4. Complete a short analysis that cleans data, plots, and reads a simple model call.
+5. Use documentation, search, and AI responsibly.
+
+This dataset is simulated for teaching. It does not contain real people.
+
+## 0. Setup
+
+Run this chunk first. If it fails, read the error and use the debugging ladder before changing anything else.
+
+```{r}
+library(tidyverse)
+library(broom)
+```
+
+Import the teaching dataset.
+
+```{r}
+health <- read_csv("data/bootcamp_health.csv")
+glimpse(health)
+```
+
+Quick orientation:
+
+```{r}
+nrow(health)
+names(health)
+```
+
+## 1. The debugging ladder
+
+When code breaks, do not rewrite the whole script. Move through the ladder.
+
+1. **Reproduce**: Can I make the error happen again?
+2. **Read**: What does the message literally say?
+3. **Isolate**: Which line first fails?
+4. **Inspect**: What are the object names, types, dimensions, and missing values?
+5. **Test**: Which assumption was false?
+6. **Verify**: Did the fix solve the original problem?
+
+Use this small log for each bug below.
+
+| Step | Your notes |
+|---|---|
+| Error message |  |
+| First failing line |  |
+| Object or column checked |  |
+| Smallest fix tried |  |
+| Verification result |  |
+
+## 2. Broken-code lab
+
+Run one broken example at a time. For each one:
+
+- Predict what might go wrong.
+- Run only the broken code.
+- Read the error or surprising result.
+- Inspect one object.
+- Write the smallest fix in the blank chunk.
+
+### Bug 1: path problem
+
+```{r}
+#| eval: false
+health_path_bug <- read_csv("bootcamp_health.csv")
+```
+
+What should you inspect first?
+
+```{r}
+# Try: getwd(), list.files(), list.files("data")
+```
+
+Write the fixed code here.
+
+```{r}
+# health_path_bug <-
+```
+
+
+### Bug 2: missing package or function
+
+This one is easiest to see in a fresh R session before loading packages.
+
+```{r}
+#| eval: false
+health_package_bug <- read_csv("data/bootcamp_health.csv")
+```
+
+If you see `could not find function`, what package probably provides the function?
+
+```{r}
+# Try: ?read_csv after loading tidyverse or readr
+# Try: library(tidyverse)
+```
+
+Write the fixed setup plus import code here.
+
+```{r}
+# library(...)
+# health_package_bug <-
+```
+
+### Bug 3: missing object
+
+```{r}
+#| eval: false
+health_clean |>
+  count(cohort)
+```
+
+What object names exist right now?
+
+```{r}
+# Try: ls()
+```
+
+Write the fixed code here.
+
+```{r}
+# Create health_clean or use the object that already exists.
+```
+
+### Bug 4: syntax problem
+
+```{r}
+#| eval: false
+health |>
+  summarize(
+    mean_bmi = mean(bmi, na.rm = TRUE),
+    mean_sbp = mean(systolic_bp, na.rm = TRUE)
+```
+
+What does R usually mean when it says something like `unexpected end of input` or waits with a `+` prompt?
+
+Write the fixed code here.
+
+```{r}
+# health |>
+#   summarize(
+#     ...
+#   )
+```
+
+### Bug 5: incorrect type
+
+```{r}
+#| eval: false
+health |>
+  mutate(days_since_visit = Sys.Date() - visit_date) |>
+  select(participant_id, visit_date, days_since_visit)
+```
+
+Inspect the type of `visit_date`.
+
+```{r}
+# Try: class(health$visit_date)
+```
+
+Write the fixed code here.
+
+```{r}
+# health |>
+#   mutate(visit_date = as.Date(visit_date), ...)
+```
+
+### Bug 6: grouping mistake
+
+This code runs, but the answer is not the intended overall mean.
+
+```{r}
+#| eval: false
+health_by_cohort <- health |>
+  group_by(cohort)
+
+health_by_cohort |>
+  summarize(overall_mean_bmi = mean(bmi, na.rm = TRUE))
+```
+
+What is still attached to `health_by_cohort`?
+
+```{r}
+# Try: groups(health_by_cohort)
+```
+
+Write code for the overall mean and, separately, the cohort-specific means.
+
+```{r}
+# Overall mean:
+
+# Cohort-specific means:
+```
+
+### Bug 7: plotting error
+
+```{r}
+#| eval: false
+health |>
+  ggplot(aes(x = bmi, y = systolic_bp, color = gender)) +
+  geom_point()
+```
+
+Which variable name is wrong? How can you check?
+
+```{r}
+# Try: names(health)
+```
+
+Write the fixed plot here.
+
+```{r}
+# health |>
+#   ggplot(...) +
+#   geom_point()
+```
+
+### Bug 8: missing values hide a result
+
+This code runs, but the result is not useful.
+
+```{r}
+#| eval: false
+health |>
+  summarize(mean_sbp = mean(systolic_bp))
+```
+
+How many missing systolic blood pressure values are there?
+
+```{r}
+# health |>
+#   summarize(missing_sbp = sum(is.na(systolic_bp)))
+```
+
+Write the fixed summary here.
+
+```{r}
+# health |>
+#   summarize(mean_sbp = mean(...))
+```
+
+### Bug 9: model formula error
+
+```{r}
+#| eval: false
+health |>
+  filter(!is.na(bmi), !is.na(systolic_bp)) |>
+  lm(systolic_bp ~ age + bmi + smoking, data = _)
+```
+
+There are two things to discuss here:
+
+1. What variable name is not in the data?
+2. Is this pipe style easy for a beginner to debug?
+
+Write the clearer fixed version here.
+
+```{r}
+# health_model_data <- health |>
+#   filter(...)
+#
+# fit_sbp <- lm(..., data = health_model_data)
+# summary(fit_sbp)
+```
+
+## 3. From repeated code to a function
+
+Start with code that already works.
+
+```{r}
+health |>
+  group_by(cohort) |>
+  summarize(
+    n = n(),
+    mean_bmi = mean(bmi, na.rm = TRUE),
+    sd_bmi = sd(bmi, na.rm = TRUE),
+    missing_bmi = sum(is.na(bmi)),
+    .groups = "drop"
+  )
+
+health |>
+  group_by(cohort) |>
+  summarize(
+    n = n(),
+    mean_sbp = mean(systolic_bp, na.rm = TRUE),
+    sd_sbp = sd(systolic_bp, na.rm = TRUE),
+    missing_sbp = sum(is.na(systolic_bp)),
+    .groups = "drop"
+  )
+```
+
+Before writing a function, answer:
+
+- What stayed the same?
+- What changed?
+- What should the function return?
+
+### Function scaffold
+
+Complete the function. Keep it small and readable.
+
+```{r}
+summarize_numeric_by_group <- function(data, group_col, value_col, na_rm = TRUE) {
+  data |>
+    group_by({{ group_col }}) |>
+    summarize(
+      n = n(),
+      mean = mean({{ value_col }}, na.rm = na_rm),
+      sd = sd({{ value_col }}, na.rm = na_rm),
+      missing = sum(is.na({{ value_col }})),
+      .groups = "drop"
+    )
+}
+```
+
+Test one simple call first.
+
+```{r}
+summarize_numeric_by_group(health, cohort, bmi)
+```
+
+Now test a second call.
+
+```{r}
+# summarize_numeric_by_group(health, smoking_status, systolic_bp)
+```
+
+Add a default argument or a small improvement. Choose one:
+
+- Add `digits = 1` and round the mean and SD.
+- Add `min_n = 1` and filter out groups with fewer than `min_n` rows.
+- Rename the output columns after the value being summarized.
+
+```{r}
+# Improved function here
+```
+
+## 4. End-to-end mini-task
+
+Your task is to build a short analysis from scratch. Use small steps and verify each one.
+
+### Step A: clean
+
+Create `health_day2` with:
+
+- `visit_date` converted to a Date.
+- `high_sbp`, where systolic blood pressure is at least 130.
+- `diabetes_yes`, where diabetes is equal to "Yes".
+- `sleep_check`, where sleep is missing, below 6 hours, between 6 and 10 hours, or above 10 hours.
+- Complete cases for `age`, `bmi`, `systolic_bp`, and `smoking_status`.
+
+```{r}
+health_day2 <- health |>
+  mutate(
+    # your variables here
+  ) |>
+  filter(
+    # your complete-case filters here
+  )
+
+# Verify:
+# glimpse(health_day2)
+# count(health_day2, sleep_check)
+```
+
+### Step B: summarize
+
+Use your function to summarize BMI by smoking status.
+
+```{r}
+# summarize_numeric_by_group(...)
+```
+
+### Step C: plot
+
+Make a plot of BMI and systolic blood pressure. Add one feature that makes the plot easier to read.
+
+```{r}
+# health_day2 |>
+#   ggplot(...) +
+#   geom_point(...) +
+#   ...
+```
+
+### Step D: read a model call
+
+Fit a simple linear model. The goal is to read the call and output, not to make causal claims.
+
+```{r}
+fit_sbp <- lm(
+  systolic_bp ~ age + bmi + smoking_status,
+  data = health_day2
+)
+
+summary(fit_sbp)
+tidy(fit_sbp)
+```
+
+In one sentence each:
+
+1. What is the outcome?
+2. What are the predictors?
+3. Which dataset did the model use?
+4. How many rows were used? How did you check?
+
+### Optional GLM stretch
+
+Create a logistic regression for `diabetes_yes`. First make sure the outcome is logical or 0/1.
+
+```{r}
+fit_diabetes <- glm(
+  diabetes_yes ~ age + bmi + smoking_status,
+  data = health_day2,
+  family = binomial()
+)
+
+tidy(fit_diabetes)
+```
+
+What changes in the model call when you move from `lm()` to `glm()`?
+
+## 5. Documentation, search, and AI responsibly
+
+Use AI and search as debugging tools, not as substitutes for running checks.
+
+A good debugging prompt:
+
+> I am a beginning R user. This code gives the error below. Please explain what the error means, name the first object or column I should inspect, and suggest the smallest fix. Do not rewrite the full analysis. Code: ... Error: ...
+
+Before asking for help, prepare a minimal example:
+
+```{r}
+# Not the full data; just enough structure to show the problem.
+example_health <- tibble(
+  cohort = c("screening", "follow-up"),
+  bmi = c(24.1, NA),
+  systolic_bp = c(118, 135)
+)
+```
+
+Responsible-use checklist:
+
+- Do not paste protected health information, credentials, or sensitive unpublished data into third-party AI tools.
+- Share the error, the relevant line, and fake or simulated example data.
+- Verify suggestions by running code and checking objects with `str()`, `glimpse()`, `names()`, and `?function_name`.
+- Ask for help when you cannot isolate the failing line, when a result changes unexpectedly, or when the code affects real analysis decisions.
+
+## 6. Competency check
+
+Before leaving, make sure you can do each item with the project dataset.
+
+- [ ] Import `data/bootcamp_health.csv` from the project root.
+- [ ] Use the debugging ladder on one broken code example.
+- [ ] Fix one object-name or column-name error by inspecting `ls()` or `names()`.
+- [ ] Fix one type error by inspecting `class()` or `glimpse()`.
+- [ ] Explain why grouped data can produce a surprising summary.
+- [ ] Write and test a small summary function.
+- [ ] Make one plot and fit one simple `lm()` call.
+- [ ] Explain what you asked AI or search, and how you verified the answer.
+
+## Follow-up resources in this project
+
+- `references/debugging_ladder.md`
+- `references/dplyr_ggplot_reference.md`
+- `references/ai_prompt_cards.md`
+- `scripts/03_broken_code_lab.R`
+- `scripts/04_functions_lab.R`
+- `scripts/05_mini_analysis.R`

@@ -22,6 +22,7 @@ Create a new RStudio project in Posit Cloud and upload the project ZIP file. The
 
 - `analysis/01_start_here.qmd`: starter Quarto lab for the workshop.
 - `analysis/01_completed_analysis.qmd`: completed version for instructor reference and post-workshop release.
+- `analysis/02_debugging_functions_template.qmd`: Day 2 student template for debugging, functions, responsible AI use, and a mini-analysis.
 - `scripts/00_setup.R`: package setup.
 - `scripts/01_import_inspect.R`: import and data inspection examples.
 - `scripts/02_wrangling_plotting.R`: dplyr and ggplot examples.
