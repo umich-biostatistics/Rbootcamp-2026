@@ -106,14 +106,14 @@ This one is easiest to see in a fresh R session before loading packages.
 
 ```{r}
 #| eval: false
-health_package_bug <- read_csv("data/bootcamp_health.csv")
+health_package_bug <- fread("data/bootcamp_health.csv")
 ```
 
 If you see `could not find function`, what package probably provides the function?
 
 ```{r}
 # Try: ?read_csv after loading tidyverse or readr
-# Try: library(tidyverse)
+# Try: library(data.table)
 ```
 
 Write the fixed setup plus import code here.
@@ -149,8 +149,9 @@ Write the fixed code here.
 #| eval: false
 health |>
   summarize(
-    mean_bmi = mean(bmi, na.rm = TRUE),
+    mean_bmi = mean(bmi, na.rm = TRUE)
     mean_sbp = mean(systolic_bp, na.rm = TRUE)
+  )
 ```
 
 What does R usually mean when it says something like `unexpected end of input` or waits with a `+` prompt?
@@ -483,7 +484,3 @@ Before leaving, make sure you can do each item with the project dataset.
 
 - `references/debugging_ladder.md`
 - `references/dplyr_ggplot_reference.md`
-- `references/ai_prompt_cards.md`
-- `scripts/03_broken_code_lab.R`
-- `scripts/04_functions_lab.R`
-- `scripts/05_mini_analysis.R`
