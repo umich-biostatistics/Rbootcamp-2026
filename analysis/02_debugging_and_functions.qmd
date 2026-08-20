@@ -1,6 +1,6 @@
 ---
-title: "Day 2 Workshop: Debugging and Reusable Code"
-author: "UM Biostatistics"
+title: "Day 2 Workshop: Debugging and Functions"
+author: "Mike Kleinsasser and Jacob Gladfelter"
 format:
   html:
     toc: true

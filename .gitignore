@@ -6,3 +6,4 @@ output/*.html
 output/*.pdf
 output/*.docx
 *.log
+.positai
