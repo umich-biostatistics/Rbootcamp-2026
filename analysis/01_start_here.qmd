@@ -30,7 +30,7 @@ AI checkpoint: Ask an AI assistant to explain what `library(tidyverse)` does. Th
 ## 2. Import
 
 ```{r}
-health_raw <- read_csv("data/bootcamp_health.csv")
+health_raw <- read_csv("../data/bootcamp_health.csv")
 ```
 
 ```{r}
