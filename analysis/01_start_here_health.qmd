@@ -1,0 +1,258 @@
+---
+title: "Intro to R Bootcamp 2026: Start Here (Rename)"
+author: "UM Biostatistics (Name)"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+## Start here: make this file your own
+
+This Quarto file is a **template for your work during the bootcamp**. Before you begin, use **File -> Save As** and rename it with your name, for example:
+
+`01_start_here_mike.qmd`
+
+Work in your renamed copy for the rest of the session. Type code directly into the code chunks, add short notes in the text areas, and save often. You do not need to finish every exercise today; the goal is to leave with a file you can continue using as a reference.
+
+By the end of this project, you will have a small reproducible analysis that imports data, checks it, cleans it, summarizes it, plots it, and fits a simple model.
+
+This dataset is simulated for teaching. It does not contain real people.
+
+## 1. Setup
+
+```{r}
+# Run scripts/00_setup.R first if tidyverse or broom is not installed.
+library(tidyverse)
+library(broom)
+```
+
+The **tidyverse** loads several packages we will use today, including `dplyr` for data manipulation, `ggplot2` for plotting, and `readr` for importing rectangular data.
+
+AI checkpoint: Ask an AI assistant to explain what `library(tidyverse)` does. Then verify by running `search()` or `?library` in R.
+
+## 2. Import
+
+```{r}
+health_raw <- read_csv("../data/bootcamp_health.csv")
+```
+
+```{r}
+glimpse(health_raw)
+```
+
+When you import a dataset, pause before changing anything. Check its dimensions, variable names, types, and a few rows first.
+
+## 3. Inspect
+
+Use small checks before changing the data.
+
+```{r}
+# How many rows and columns?
+
+# What are the first few rows?
+
+# How many missing values are in each column?
+
+```
+
+## 4. dplyr: working with data
+
+Most `dplyr` code can be read as a sequence of verbs. A useful mental model is:
+
+- `filter()` — which **rows** do I want?
+- `select()` — which **columns** do I want?
+- `mutate()` — what **new or changed variables** do I need?
+- `arrange()` — in what **order** should the rows appear?
+- `group_by()` — what **groups** should calculations happen within?
+- `summarize()` — what **summary** should I calculate for each group?
+
+The pipe `|>` passes the result from one step into the next. Read a pipeline from top to bottom and ask: *what object goes into this line, and what comes out?*
+
+### Try a short pipeline
+
+```{r}
+health_raw |>
+  filter(age >= 18) |>
+  select(age, sex, bmi, systolic_bp) |>
+  arrange(desc(systolic_bp))
+```
+
+Try changing one thing in the pipeline. For example, sort by `bmi` instead, or filter to one value of `sex`.
+
+### Clean and create variables
+
+Create a cleaned dataset called `health_clean`.
+
+```{r}
+health_clean <- health_raw |>
+  mutate(
+    visit_date = as.Date(visit_date),
+    hypertension_flag = systolic_bp >= 130 | diastolic_bp >= 80,
+    bmi_group = case_when(
+      is.na(bmi) ~ NA_character_,
+      bmi < 18.5 ~ "Underweight",
+      bmi < 25 ~ "Healthy range",
+      bmi < 30 ~ "Overweight",
+      TRUE ~ "Obesity range"
+    )
+  ) |>
+  filter(!is.na(age), !is.na(bmi), !is.na(systolic_bp))
+```
+
+AI checkpoint: Ask AI to explain one line of the `case_when()` code. Do not ask it to do the whole lab.
+
+### Summarize by groups
+
+```{r}
+health_clean |>
+  group_by(sex) |>
+  summarize(
+    n = n(),
+    mean_age = mean(age),
+    mean_bmi = mean(bmi),
+    percent_hypertension = mean(hypertension_flag) * 100,
+    .groups = "drop"
+  )
+```
+
+Before running it, predict how many rows the output will have. Then change `group_by(sex)` to `group_by(smoking_status)` and run it again.
+
+## 5. dplyr practice: the health data
+
+Use `health_raw` for these exercises so you are practicing on the same dataset used throughout the workshop. The codebook tells you what each variable represents. If time is limited, do the first exercise in class and return to the others later.
+
+Each question can be answered with one `dplyr` pipeline. Try to identify the verbs you need before you start typing.
+
+1. **Among participants in the follow-up cohort, which race/ethnicity group has the most participants?**
+
+Think about the order: first keep the rows you want, then count the groups, then put the largest count first.
+
+```{r}
+# Start with: health_raw |>
+#   filter(...) |>
+```
+
+2. **Which smoking-status group has the highest average systolic blood pressure?**
+
+Ignore missing systolic blood pressure values when calculating the mean.
+
+```{r}
+# Think: group_by() -> summarize() -> arrange()
+```
+
+3. **Which participant has the largest difference between systolic and diastolic blood pressure?**
+
+Create a new variable equal to `systolic_bp - diastolic_bp`, then sort from largest to smallest.
+
+```{r}
+# Think: mutate() -> arrange() -> select()
+```
+
+## 6. ggplot2: build plots in layers
+
+A `ggplot2` graphic usually has a few pieces:
+
+1. **data** — the data frame
+2. **mapping** — variables assigned to visual features with `aes()`
+3. **geometry** — the marks drawn with a `geom_*()` function
+4. **labels** — titles and axis/legend labels with `labs()`
+5. **theme** — optional appearance changes
+
+Start simple and add one layer at a time. If a plot stops working, the last layer you added is a good place to look first.
+
+```{r}
+health_clean |>
+  ggplot(aes(x = bmi, y = systolic_bp)) +
+  geom_point()
+```
+
+Now add color, a trend line, labels, and a theme.
+
+```{r}
+health_clean |>
+  ggplot(aes(x = bmi, y = systolic_bp, color = smoking_status)) +
+  geom_point(alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(
+    title = "Systolic blood pressure and BMI",
+    x = "BMI",
+    y = "Systolic blood pressure",
+    color = "Smoking status"
+  ) +
+  theme_minimal()
+```
+
+Try removing one layer at a time. Which line controls the points? The trend line? The labels? The overall appearance?
+
+## 7. ggplot2 practice: the health data
+
+Use `health_raw` or `health_clean` to make three plots. The goal is to practice choosing mappings and geometries, not to make a publication-ready figure. Build each plot one layer at a time.
+
+1. **Show how many participants are in each smoking-status group.**
+
+```{r}
+# Hint: put smoking_status on the x-axis and think about geom_bar()
+```
+
+2. **Is there a relationship between age and BMI?**
+
+Make a scatterplot with age on the x-axis and BMI on the y-axis.
+
+```{r}
+# Start with the data, add aes(), then choose a geom.
+```
+
+3. **Plot systolic blood pressure against diastolic blood pressure and color the points by cohort.**
+
+Add clear axis labels and a title. If you have time, try changing the color mapping from `cohort` to `smoking_status` and compare the result.
+
+```{r}
+# Map systolic_bp and diastolic_bp to the axes and cohort to color.
+```
+
+AI checkpoint: If you get stuck, ask AI for a **hint or explanation**, not the completed worksheet. Run the suggested code yourself and confirm that it uses columns that actually exist in `health_raw`.
+
+## 8. lm: Simple model
+
+The goal is to learn syntax and output-reading, not regression theory.
+
+```{r}
+fit <- lm(systolic_bp ~ age + bmi + sex, data = health_clean)
+summary(fit)
+```
+
+```{r}
+tidy(fit)
+```
+
+AI checkpoint: Ask AI to explain the output in beginner language. Then verify the variable names and sample size yourself.
+
+## 9. Save one output
+
+```{r}
+cohort_table <- health_clean |>
+  group_by(sex) |>
+  summarize(
+    n = n(),
+    mean_bmi = mean(bmi),
+    mean_sbp = mean(systolic_bp),
+    .groups = "drop"
+  )
+
+write_csv(cohort_table, "../output/cohort_table.csv")
+```
+
+## Exit check
+
+Write one sentence answering each question:
+
+1. What file did you import?
+2. What is the difference between `filter()`, `mutate()`, and `summarize()`?
+3. What did `group_by()` change about the summary?
+4. What are the three essential pieces of a basic `ggplot()`?
+5. What would you ask AI to explain, and how would you verify the answer?
