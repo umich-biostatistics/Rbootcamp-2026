@@ -170,7 +170,7 @@ Write the fixed code here.
 ```{r}
 #| eval: false
 health |>
-  mutate(days_since_visit = Sys.Date() - visit_date) |>
+  mutate(days_since_visit = "2026-08-27" - visit_date) |>
   select(participant_id, visit_date, days_since_visit)
 ```
 
